@@ -1,0 +1,4 @@
+section[data-testid] div.stButton button {
+    background-color: brown;
+    width: 200px;
+}
