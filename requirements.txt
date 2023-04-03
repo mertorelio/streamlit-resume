@@ -1,4 +1,4 @@
 Pillow==9.2.0
-streamlit==1.12.0
+streamlit
 streamlit_option_menu
-athlib
+pathlib
