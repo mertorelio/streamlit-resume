@@ -73,7 +73,7 @@ def main():
  
     selected = option_menu(
             menu_title=None,  # required
-            options=["About", "Education & Skills", "Projects","In Progress"],  # required
+            options=["About", "Education & Skills", "Projects"],  # required
             #icons=["house", "book", "envelope","envelope"], 
             default_index=0,  # optional
             orientation="horizontal",
@@ -95,8 +95,7 @@ def main():
         edu_main()
     if selected == "Projects":
         projects_main()
-    if selected == "In Progress":
-        pass 
+    
 
 
 if __name__ == "__main__":
