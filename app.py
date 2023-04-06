@@ -5,6 +5,14 @@ from PIL import Image
 from about import about_main
 from edu import edu_main
 from projects import projects_main
+st.write('''<style>
+
+[data-testid="column"] {
+    width: calc(25% - 1rem) !important;
+    flex: 1 1 calc(25% - 1rem) !important;
+    min-width: calc(25% - 1rem) !important;
+}
+</style>''', unsafe_allow_html=True)
 
 st.markdown("""
         <style>
@@ -28,7 +36,7 @@ profile_pic = current_dir / "assets" / "pp1.png"
 
 # --- GENERAL SETTINGS ---
 NAME = "Mert Bozkurt"
-DESCRIPTION = """ Junior Machine Learning Engineer
+DESCRIPTION = """ Jr. Machine Learning Engineer
 """
 EMAIL = "bozkurtmert374@gmail.com"
 
@@ -45,18 +53,18 @@ def main():
     # --- HERO SECTION ---
     col11, col12  = st.columns(2, gap="small")
     with col11:
-        st.image(profile_pic, width=230)
+        st.image(profile_pic, width=180)
 
     with col12:
         st.title(NAME)
         st.write(DESCRIPTION)
-        st.download_button(
-            label=" 📄 Download Resume",
-            data=PDFbyte,
-            file_name=resume_file.name,
-            mime="application/octet-stream",
-        )
-        col1,col2,col3,col4 = st.columns(4,gap="small")
+#    st.download_button(
+ #           label=" 📄 Download Resume",
+  #          data=PDFbyte,
+   #         file_name=resume_file.name,
+    #        mime="application/octet-stream",
+    #    )      
+        col1,col2,col3,col4 = st.columns(4)
         with col1 :
             st.markdown('<a href="https://www.linkedin.com/in/mert-bozkurt-b07096181/"><img src="https://www.iconpacks.net/icons/2/free-linkedin-logo-icon-2430-thumb.png" width=35 height=35></a>', unsafe_allow_html=True)
     
@@ -65,15 +73,16 @@ def main():
         with col3 :
             st.markdown('<a href="https://medium.com/@mertbozkurt0"><img src="https://cdn-icons-png.flaticon.com/512/5968/5968906.png" width=35 height=35></a>', unsafe_allow_html=True)
         
+    
         with col4 :
             st.markdown('<a href="mailto:bozkurtmert374@gmail.com"><img src="https://cdn-icons-png.flaticon.com/512/281/281769.png" width=35 height=35></a>', unsafe_allow_html=True)
-        
+            
        
     
  
     selected = option_menu(
             menu_title=None,  # required
-            options=["About", "Education & Skills", "Projects"],  # required
+            options=["About", "opp", "Projects"],  # required
             #icons=["house", "book", "envelope","envelope"], 
             default_index=0,  # optional
             orientation="horizontal",
@@ -91,7 +100,7 @@ def main():
         )
     if selected == "About":
         about_main()
-    if selected == "Education & Skills":
+    if selected == "opp":
         edu_main()
     if selected == "Projects":
         projects_main()
